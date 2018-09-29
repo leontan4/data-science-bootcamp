@@ -1,0 +1,10 @@
+# Hlines that indicates on graphs is the "equator"
+
+# Obervation 1
+Countries that falls near to the equator has a high temperature and low wind speed. Also, these countries do not have winter season and mostly "summer" throughout the year. It make sense though because countries near to the equator are Asian countries, such as India, Indonesia, Malaysia. However, if we look into the globe and noticed China, the part of the country that has higher latitude would have a lower temperature and winter season. 
+
+# Observation 2
+The windspeed graph and humidity graph seems pretty consistent to each other as countries with lower windspeed would have high humidity. However, that do not explain how the temperature in those countries are related to it. This follows the same as windspeed. Maybe we can add a longitude and other types of variables to compare to it. Because it seems that only temeprature shows relationship to those countries.
+
+# Observation 3
+If we imagine the longtitude exist along the vertical lines, there might be a relationship in the graphs. I figured that the countries that has more humidity and less windspeed are more to the prime meridian, this would include countries such as Africa, which also has high degree in temperature. 
