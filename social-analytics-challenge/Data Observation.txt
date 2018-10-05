@@ -1,0 +1,10 @@
+_October 4th, 2018_
+
+# Observation 1
+Based on the first plot data, it can be seen that Fox and CNN has a lot of neutral comment coming from followers. However, in the "negative" scores, CNN's score count is much more than Fox and Fox does not seem to have more than 2 score counts. Would it be possible that most of these counts are from television shows instead of the news? It would be great to compare the news comments since a lot of people seem to have a bias thought that Fox news are "political" in a sense. 
+
+# Observation 2
+New York Times score counts are mostly equal in the "positive" and "negative" sections. Tweets in the New York Times could possibly be educational as the scores are given critically and there seem to be no neutral scores. However, in the bar plot, NYT has a high average in the "positive" section, this could also indicate that the "positive" comment that people tweeted are really encouraging or motivational and the people that gave a negative comments are for critical feedback instead of the "toxic" kind. 
+
+# Observation 3
+CBS and BBC has the highest "positive" average in the bar plot. In the scatter plot, people are watching BBC has a high score in positive and score concentrations high in (0-20) tweets ago. In other words, a lot of people are more active in BBC's twitter comepare to the other medias. The only question I had in mind is that it seems that in the scatter plot, CNN has a high "positive" score count but it shown "negative" in the bar plot. Could it be that people's comment are more "toxic" in CNN? 
