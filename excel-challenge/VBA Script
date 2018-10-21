@@ -1,0 +1,78 @@
+
+```THIS IS FOR THE MODERATE DIFFICULTY````
+
+
+Sub mutiple_year()
+
+Dim ws As Worksheet
+Dim LastRow As String
+Dim open_stock As Double
+Dim close_stock As Double
+Dim difference As Double
+Dim percent_difference As Double
+Dim percent_change As Double
+
+For Each ws In ActiveWorkbook.Worksheets
+ws.Activate
+
+ws.Range("I1").EntireColumn.Insert
+ws.cells(1, 9).Value = "Ticker"
+
+ws.Range("J1").EntireColumn.Insert
+ws.cells(1, 10).Value = "Yearly Change"
+
+ws.Range("K1").EntireColumn.Insert
+ws.cells(1, 11).Value = "Percent Change"
+
+ws.Range("L1").EntireColumn.Insert
+ws.cells(1, 12).Value = "Total Year Volume"
+
+LastRow = cells(Rows.Count, 1).End(xlUp).Row
+Base = 1
+
+    For i = 2 To LastRow
+        open_stock = cells(i, 3).Value
+        close_stock = cells(i, 6).Value
+        difference = close_stock - open_stock
+        
+        If (difference = 0) Then
+            percent_difference = 0
+            percent_change = percent_change + percent_difference
+            
+        Else
+            percent_difference = difference / open_stock
+            
+        End If
+        
+        If cells(i + 1, 1) <> cells(i, 1) Then
+            Base = Base + 1
+            Range("I" & Base).Value = cells(i, 1).Value
+            Total = Total + cells(i, 7).Value
+            yearly_change = yearly_change + difference
+    
+            percent_change = percent_change + percent_difference
+            Range("L" & Base).Value = Total
+            Range("K" & Base).Value = percent_change + percent_difference
+            Range("K" & Base).Value = Format(percent_change, "0.00%")
+            Range("J" & Base).Value = yearly_change + difference
+           
+            Total = 0
+            percent_change = 0
+            yearly_change = 0
+        
+        Else
+            Total = Total + cells(i, 7).Value
+            yearly_change = yearly_change + difference
+            percent_change = percent_change + percent_difference
+ 
+        End If
+    Next i
+        For i = 2 To LastRow
+        If (cells(i, 10).Value) > 0 Then
+            cells(i, 10).Interior.ColorIndex = 4
+        Else
+            cells(i, 10).Interior.ColorIndex = 3
+        End If
+    Next i
+Next ws
+End Sub
