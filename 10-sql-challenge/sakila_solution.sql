@@ -188,32 +188,13 @@ using (customer_id)
 group by cus.store_id;
 
 -- 7g --
-select city.city as "City Name", c.country as "Country"
-from country c
-inner join 
-(
-	select city.country_id
-	from city
-	where city.city_id in 
-
-		(
-		select ad.city_id
-		from store s
-		inner join address ad
-		using(address_id)
-		)
-)
-on c.country_id
-;
-
-select *
-from city
-left join
-(
-select *
+select s.store_id as "Store ID", city.city as "City Name", c.country as "Country"
 from store s
 inner join address ad
 using(address_id)
-)
-on address_id;
+inner join city
+using (city_id)
+inner join country c
+using(country_id);
+
 -- 7h --
