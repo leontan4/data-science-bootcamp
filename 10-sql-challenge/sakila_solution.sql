@@ -198,3 +198,39 @@ inner join country c
 using(country_id);
 
 -- 7h --
+select cat.name as "Movie Categories", count(i.film_id) as "Total Movies Sold", fcat.category_id as "Category ID", sum(p.amount) as "Gross Revenue"
+from category cat
+inner join film_category fcat
+using (category_id)
+inner join inventory i
+using (film_id)
+inner join rental r
+using(inventory_id)
+inner join payment p
+using (rental_id)
+group by cat.name
+order by count(i.film_id) desc
+limit 5;
+
+-- 8a -- 
+create view top_five_genres as 
+select cat.name as "Movie Categories", count(i.film_id) as "Total Movies Sold", fcat.category_id as "Category ID", sum(p.amount) as "Gross Revenue"
+from category cat
+inner join film_category fcat
+using (category_id)
+inner join inventory i
+using (film_id)
+inner join rental r
+using(inventory_id)
+inner join payment p
+using (rental_id)
+group by cat.name
+order by count(i.film_id) desc
+limit 5;
+
+-- 8b --
+-- Answer -- 
+-- Refresh the schema and right click on the view to alter view and get the SQL script
+
+-- 8c --
+drop view top_five_genres;
