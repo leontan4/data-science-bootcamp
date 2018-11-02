@@ -1,8 +1,10 @@
 import numpy as np
 
 import sqlalchemy
+
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
+from sqlalchemy import and_, or_
 from sqlalchemy import create_engine, func
 
 from flask import Flask, jsonify
@@ -41,80 +43,95 @@ def welcome():
     return (
         f"Welcome to Surfing Page!!<br/>"
         f"Available Routes:<br/>"
-        f"/api/v1.0/names<br/>"
-        f"/api/v1.0/percipitation<br/>"
-        f"/api/v1.0/station<br/>"
-        f"/api/v1.0/tobs<br/>"
+        f"Precipitation: /api/v1.0/precipitation<br/>"
+        f"Stations: /api/v1.0/station<br/>"
+        f"Temperatures: /api/v1.0/tobs<br/>"
+        f"/api/v1.0/date1/<start_date><br/>"
+        f"/api/v1.0/date1/<start_date>/<end_date>"
     )
 
+# Appending the dates and precipitation
+@app.route("/api/v1.0/precipitation3/")
+def precipitation():
 
-@app.route("/api/v1.0/precipitation")
-def names():
-    """Return a list of percipitation"""
-
-    measure = session.query(Measurement).all()
-    all_data = []
-    for data in measure:
-        measurement_dict = {
-            "Date": data["date"],
-            "Precipitation": data["prcp"]
-        }
-
-        all_data.append(measurement_dict)
+    results = session.query(Measurement).filter(Measurement.prcp != None)
+    all_data = {}
+    
+    for test in results:
+        all_data[test.date] = test.prcp
 
     return jsonify(all_data)
 
-
-@app.route("/api/v1.0/stations")
+# Getting all the stations ID
+@app.route("/api/v1.0/stations1")
 def stations():
-    """Return a list of stations"""
-    # Query all stations
 
-    measure = session.query(Measurement).all()
-    station_data = []
-    for station in measure:
-        station_dict = {
+    results = session.query(Station)
+    station_list = []
+    for station in results:
 
-            "Stations": station.station,
-            "Precipitation": station.prcp,
-            "Tobs": station.tobs
-        }
+        station_dict={}
+        station_dict["Station ID"] = station.station
+        station_dict["Location"] = station.name
+        station_list.append(station_dict)
 
-        station_data.append(station_dict)
+    return jsonify(station_list)
 
-    return jsonify(station_data)
-
+# Reformat the tobs
 @app.route("/api/v1.0/tobs")
 def tobs():
-    """Return a list of tobs"""
-    # Query all tobs
 
-    measure = session.query(Measurement).all()
-    tobs_data = []
-    for tobs in measure:
-        tobs_dict = {
-            "Date": tobs.date,
-            "TOBS": tobs.tobs
-        }
+    results = session.query(Measurement).filter(Measurement.date >= "2016-08-23")
+    tobs_list = []
+    for temperature in results:
 
-        tobs_data.append(tobs_dict)
+        tobs_dict={}
+        tobs_dict["Date"] = temperature.date
+        tobs_dict["TOBS"] = temperature.tobs
+        tobs_list.append(tobs_dict)
 
-    return jsonify(tobs_data)
+    return jsonify(tobs_list)
 
-@app.route("/api/v1.0/<start>")
-def start(start_date):
-    """Return a list from start date"""
-    # Query all columns from start date
 
-    measure = session.query(Measurement).all()
-    start_dates = []
-    for date in measure:
-        start_dict = {
-            "Date": date.date
-        }
+# Finding values with start date
+@app.route("/api/v1.0/date2/<start_date>")
+def calc_temps(start_date):
+    
+    measure = session.query(Measurement).filter(Measurement.station >= start_date).all()
+    
+    all_dict = {}
+    temps = []
+    for test in measure:
+        temps.append(test.tobs)
+        
+    all_dict = {
+        "Mix Temp": min(temps),
+        "Max Temp": max(temps),
+        "Avg Temp": sum(temps)/len(temps)
+        
+    }
 
-        start_dates.append(start_dict)
+    return jsonify(all_dict)
 
-    return jsonify(start_dates)
+@app.route("/api/v1.0/date/<start_date>/<end_date>")
+def calc_total(start_date, end_date):
+    
+    measure = session.query(Measurement).filter(Measurement.station >= start_date).filter(Measurement.station <= end_date).all()
+    
+    total_dict = {}
+    temps_total = []
+    for test in measure:
+        temps_total.append(test.tobs)
+        
+    total_dict = {
+        "Mix Temp": min(temps_total),
+        "Max Temp": max(temps_total),
+        "Avg Temp": sum(temps_total)/len(temps_total)
+        
+    }
+
+    return jsonify(total_dict)
+
 if __name__ == '__main__':
     app.run(debug=True)
+
