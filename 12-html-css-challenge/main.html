@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"
     rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
 
     
     <title>Latitude Webpage</title>
@@ -14,25 +14,25 @@
 <body>
     <div class ="container-fluid">
         <div class="header">
-                <div class="navbar">
-                    <a href="#home" class="logo">Latitude</a>
+                <div class="navbar ">
+                    <a href="main.html" class="logo">Latitude<span class="sr-only">(current)</span></a>
                 <div class="header-right">     
-                    <!-- <a href="#plots">Plots</a> -->
-
                     <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Plottings
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="#">Temperature</a>
-                              <a class="dropdown-item" href="#">Humidity</a>
-                              <a class="dropdown-item" href="#">Cloudiness</a>
-                              <a class="dropdown-item" href="#">Wind Speed</a>
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Plottings
+                            </a>
+                            
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="temperature.html">Temperature</a>
+                                <a class="dropdown-item" href="humidity.html">Humidity</a>
+                                <a class="dropdown-item" href="cloudiness.html">Cloudidness</a>
+                                <a class="dropdown-item" href="wind_speed.html">Wind Speed</a>
                             </div>
-                          </div>
+                            </div>
+
                     
-                    <a class="compare_header" href="#comparison">Comparison</a>
-                    <a class="data_header" href="#data">Data</a>
+                    <a class="compare_header" href="comparison.html">Comparison</a>
+                    <a class="data_header" href="data.html">Data</a>
             </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
                     Once the dataset was assembled, Matplolib was used to plot the various aspect of the weather vs latitude.<br>
                     Other variables were included in our analysis as well:
                     <ol>
-                        <li>Temperature</li>
+                        <li href="https://www.youtube.com/">Temperature</li>
                         <li>Humidity</li>
                         <li>Cloudiness</li>
                         <li>Wind Speed</li>
