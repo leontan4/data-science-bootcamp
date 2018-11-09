@@ -6,40 +6,80 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"
     rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="wind_speed.css">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="cloudiness.css">
+
+    
+    <title>Latitude Webpage</title>
 </head>
 <body>
     <div class ="container-fluid">
-        <div class="header">
-            <div class="navbar">
-            <a href="main.html" class="logo">Latitude</a>
-                <div class="header-right">     
-                    <div class="dropdown">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Plottings
-                        </a>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="temperature.html">Temperature</a>
-                            <a class="dropdown-item" href="#">Humidity</a>
-                            <a class="dropdown-item" href="#">Cloudidness</a>
-                            <a class="dropdown-item" href="#">Wind Speed</a>
+            <div class="header">
+                <div class="navbar">
+                <a href="main.html" class="logo">Latitude</a>
+                    <div class="header-right">     
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Plottings
+                            </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="temperature.html">Temperature</a>
+                                <a class="dropdown-item" href="humidity.html">Humidity</a>
+                                <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+                                <a class="dropdown-item" href="wind_speed.html">Wind Speed</a>
+                            </div>
                         </div>
-                    </div>
-                    <a class="compare_header" href="#comparison">Comparison</a>
-                    <a class="data_header" href="#data">Data</a>
-            </div>
-            </div>
-        </div>
-        </div>
-    <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6">
-                    <h1 class="temperature">Latitude vs Temperature</h1>
-                    <p>Welcome to the temperature page! <br>
-                        In this page, we will be discussing the temperatures that are related to various latitudes of the
-                        
+                        <a class="compare_header" href="comparison.html">Comparison</a>
+                        <a class="data_header" href="data.html">Data</a>
                 </div>
-
+                </div>
+            </div>
+            </div>
+            <br>
+        
+                
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="jumbotron" id="jumbo1">
+                <br>
+                <b><h1 class="header1">Fluffy...</h1></b>
+                <hr class="my-2">
+                <p class="para">Cloudiness?
+                        <br>
+                        <br>
+                    This is the cloudiness page. 
+                    As we can see from the graph here, the plots are scattered all over and did not indicate if there are any relationship to the other variables as well.
+                    However, the cloudiness may vary based on seasons. 
+                    Even though we see that some of them are equally saturated on the left and right side of the equator, countries such as the North might have more cloudiness percentage in the winter season.
+                    Right now, there is not much that we can say about the cloudiness. 
+                    </p>
+        
+                    
+                    <img class="cloudiness" src = "https://github.com/tanxx519/UMN_Homework/blob/master/06%20-api-challenge/Images/cloud_lat.png?raw=true">
+                
+                </div>
+            </div>
+        
+        <div class="row">
+        <div class=".col-md-4 .offset-md-4">
+            <div class="jumbotron .col-md-4 .offset-md-4" id="jumbo2">
+                <br>
+                <h2 class="header2">Visualizations</h2>
+                <hr class="my-2">
+                <a class="temp" href="temperature.html"><img src="https://github.com/tanxx519/UMN_Homework/blob/master/06%20-api-challenge/Images/temp_lat.png?raw=true">
+                    <a class="humidity" href="humidity.html"><img src="https://github.com/tanxx519/UMN_Homework/blob/master/06%20-api-challenge/Images/humidity_lat.png?raw=true"></a>
+                    <a class="cloud" href="cloudiness.html"><img src="https://github.com/tanxx519/UMN_Homework/blob/master/06%20-api-challenge/Images/cloud_lat.png?raw=true">
+                    <a class="wind" href="wind_speed.html"><img src="https://github.com/tanxx519/UMN_Homework/blob/master/06%20-api-challenge/Images/wind_lat.png?raw=true">
+            </div>
+        </div>
+        </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
+
 </html>
+
+
+

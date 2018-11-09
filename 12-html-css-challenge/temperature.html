@@ -7,39 +7,79 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"
     rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="temperature.css">
-    <title>Document</title>
+
+    
+    <title>Latitude Webpage</title>
 </head>
 <body>
     <div class ="container-fluid">
-        <div class="header">
-            <div class="navbar">
-            <a href="main.html" class="logo">Latitude</a>
-                <div class="header-right">     
-                    <div class="dropdown">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Plottings
-                        </a>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="temperature.html">Temperature</a>
-                            <a class="dropdown-item" href="humidity.html">Humidity</a>
-                            <a class="dropdown-item" href="cloudiness.html">Cloudidness</a>
-                            <a class="dropdown-item" href="wind_speed.html">Wind Speed</a>
+            <div class="header">
+                <div class="navbar">
+                <a href="main.html" class="logo">Latitude</a>
+                    <div class="header-right">     
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Plottings
+                            </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="temperature.html">Temperature</a>
+                                <a class="dropdown-item" href="humidity.html">Humidity</a>
+                                <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+                                <a class="dropdown-item" href="wind_speed.html">Wind Speed</a>
+                            </div>
                         </div>
-                    </div>
-                    <a class="compare_header" href="comparison.html">Comparison</a>
-                    <a class="data_header" href="data.html">Data</a>
-            </div>
-            </div>
-        </div>
-        </div>
-    <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6">
-                    <h1 class="temperature">Latitude vs Temperature</h1>
-                    <p>Welcome to the temperature page! <br>
-                        In this page, we will be discussing the temperatures that are related to various latitudes of the
-                        
+                        <a class="compare_header" href="comparison.html">Comparison</a>
+                        <a class="data_header" href="data.html">Data</a>
                 </div>
-
+                </div>
+            </div>
+            </div>
+            <br>
+        
+                
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="jumbotron" id="jumbo1">
+                <br>
+                <b><h1 class="header1">What is the temperature?</h1></b>
+                
+                <hr class="my-2">Hot Hot Hot!
+                <br>
+                <br>
+                <p class="para">As we can see from the temperature graph, countries that falls near to the equator has a high temperature. 
+                    Also, these countries do not have winter season and mostly "summer" throughout the year. 
+                    It make sense though because these countries are near to the equator are Asian countries, such as India, Indonesia, Malaysia. 
+                    Thus, the temperature would be higher.
+                    However, if we look into the globe and noticed China, the part of the country that has higher latitude would have a lower temperature and winter season. 
+                    </p>
+        
+                    
+                    <img class="temperature" src = "https://github.com/tanxx519/UMN_Homework/blob/master/06%20-api-challenge/Images/temp_lat.png?raw=true">
+                
+                </div>
+            </div>
+        
+        <div class="row">
+        <div class=".col-md-4 .offset-md-4">
+            <div class="jumbotron .col-md-4 .offset-md-4" id="jumbo2">
+                <br>
+                <h2 class="header2">Visualizations</h2>
+                <hr class="my-2">
+                <a class="temp" href="temperature.html"><img src="https://github.com/tanxx519/UMN_Homework/blob/master/06%20-api-challenge/Images/temp_lat.png?raw=true">
+                    <a class="humidity" href="humidity.html"><img src="https://github.com/tanxx519/UMN_Homework/blob/master/06%20-api-challenge/Images/humidity_lat.png?raw=true"></a>
+                    <a class="cloud" href="cloudiness.html"><img src="https://github.com/tanxx519/UMN_Homework/blob/master/06%20-api-challenge/Images/cloud_lat.png?raw=true">
+                    <a class="wind" href="wind_speed.html"><img src="https://github.com/tanxx519/UMN_Homework/blob/master/06%20-api-challenge/Images/wind_lat.png?raw=true">
+            </div>
+        </div>
+        </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
+
 </html>
+
+
+
