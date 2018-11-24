@@ -1,22 +1,29 @@
-# import necessary libraries
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
+from flask_pymongo import PyMongo
+import scrape_mars
 
-# create instance of Flask app
 app = Flask(__name__)
 
-# List of dictionaries
-dogs = [{"name": "Fido", "type": "Lab"},
-        {"name": "Rex", "type": "Collie"},
-        {"name": "Suzzy", "type": "Terrier"},
-        {"name": "Tomato", "type": "Retriever"}]
+# Use flask_pymongo to set up mongo connection
+mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 
 
-# create route that renders index.html template
-@app.route("/")
-def index():
+@app.route("/testtest")
+def home():
 
-    return render_template("index.html", dogs=dogs)
+    # Find one record of data from the mongo database
+    mars_data = mongo.db.data.find_one()
 
+    # Return template and data
+    return render_template("index.html", mars_data=mars_data)
+
+
+@app.route("/scrape_test")
+def scraper():
+    mars_data = mongo.db.data
+    data_data = scrape_mars.scrape()
+    mars_data.update({}, data_data, upsert=True)
+    return redirect("/")
 
 if __name__ == "__main__":
     app.run(debug=True)
