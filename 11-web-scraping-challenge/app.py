@@ -23,7 +23,7 @@ def scraper():
     mars_data = mongo.db.data
     data_data = scrape_mars.scrape()
     mars_data.update({}, data_data, upsert=True)
-    return redirect("/")
+    return redirect("http://localhost:5000/", code=302)
 
 if __name__ == "__main__":
     app.run(debug=True)
