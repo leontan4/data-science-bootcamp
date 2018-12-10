@@ -24,13 +24,12 @@ submit.on("click", function() {
     var filteredData = tableData.filter(info => info.datetime === inputValue);
     console.log(filteredData)
     
-    var row = d3.select("tbody").append("tr");
-
-    Object.entries(filteredData).forEach(([key, value]) => {
-        if(value === inputValue) {
+    filteredData.forEach(items => {
+        var row = d3.select("tbody").append("tr");
+        Object.entries(items).forEach(([key, value]) => {
             var info = row.append("td");
             info.text(value);
-        };
+        });
     });
 });
   
