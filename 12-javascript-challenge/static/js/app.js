@@ -13,6 +13,27 @@ tableData.forEach(items => {
     });
 });
 
-// var row = d3.select("tbody").append("tr");
+var submit = d3.select("#filter-btn");
 
-// var datas = row.append("td").text(dates);
+submit.on("click", function() {
+    d3.event.preventDefault();
+    var inputElement = d3.select("#datetime");
+    var inputValue = inputElement.property("value");
+    console.log(inputValue);
+
+    var filteredData = tableData.filter(info => info.datetime === inputValue);
+    console.log(filteredData)
+
+    tableData.forEach(items => {
+        var row = d3.select("tbody").append("tr");
+
+        Object.entries(items).forEach(([key, value]) => {
+            if(value === inputValue) {
+                var info = row.append("td");
+                info.text(value);
+            };
+        });
+    })
+});
+
+  
