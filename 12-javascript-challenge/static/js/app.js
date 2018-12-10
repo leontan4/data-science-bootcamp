@@ -23,17 +23,14 @@ submit.on("click", function() {
 
     var filteredData = tableData.filter(info => info.datetime === inputValue);
     console.log(filteredData)
+    
+    var row = d3.select("tbody").append("tr");
 
-    tableData.forEach(items => {
-        var row = d3.select("tbody").append("tr");
-
-        Object.entries(items).forEach(([key, value]) => {
-            if(value === inputValue) {
-                var info = row.append("td");
-                info.text(value);
-            };
-        });
-    })
+    Object.entries(filteredData).forEach(([key, value]) => {
+        if(value === inputValue) {
+            var info = row.append("td");
+            info.text(value);
+        };
+    });
 });
-
   
