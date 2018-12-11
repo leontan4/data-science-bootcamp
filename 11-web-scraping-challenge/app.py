@@ -15,7 +15,7 @@ def home():
     mars_data = mongo.db.data.find_one()
 
     # Return template and data
-    return render_template("index.html", mars_testing=mars_data)
+    return render_template("index.html", mars=mars_data)
 
 
 @app.route("/scrape")
