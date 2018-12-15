@@ -17,6 +17,14 @@ var submit = d3.select("#filter-btn");
 
 submit.on("click", function() {
     d3.event.preventDefault();
+    function clearTable()
+    {
+     var tableRef = document.getElementById(".tbodyid");
+     while ( tableRef.rows.length > 0 )
+     {
+      tableRef.deleteRow(0);
+     }
+    }    
     var inputElement = d3.select("#datetime");
     var inputValue = inputElement.property("value");
     console.log(inputValue);
