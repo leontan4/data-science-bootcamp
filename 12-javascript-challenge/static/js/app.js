@@ -14,9 +14,11 @@ tableData.forEach(items => {
 });
 
 var submit = d3.select("#filter-btn");
+var tbody = d3.select("tbody");
 
 submit.on("click", function() {
     d3.event.preventDefault();
+    tbody.html("");
     function clearTable()
     {
      var tableRef = document.getElementById(".tbodyid");
