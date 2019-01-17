@@ -20,6 +20,7 @@ var myMap = L.map("map", {
 
   // Grab the data with d3
   d3.json(url, function(error, data) {
+    console.log(data);
     
     var all_data = data.features;
 
