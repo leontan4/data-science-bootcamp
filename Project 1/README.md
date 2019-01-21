@@ -1,2 +1,6 @@
 # Project_Antigravity2
 Boot Camp Project 1
+
+This project is cloned from: https://github.com/Kamran-Wali/Project_Antigravity2
+
+The four of us (Atishya, Kamran, Zoe, Leon) worked on this project. 
