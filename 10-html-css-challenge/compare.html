@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Comparison</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/compare.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <strong><a class="navbar-brand" href="main.html">Latitude</a></strong> 
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <strong>Plots</strong>
+                    </a>
+                    
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="temp.html">Max Temperature</a>
+                        <a class="dropdown-item" href="humid.html">Humidity</a>
+                        <a class="dropdown-item" href="cloud.html">Cloudiness</a>
+                        <a class="dropdown-item" href="wind.html">Wind Speed</a>
+                    </div>
+
+                </li>
+                <li class="nav-item">
+                    <strong><a href="compare.html" class="nav-link">Comparison</a></strong>
+                </li>
+                <li class="nav-item">
+                    <strong><a href="data.html" class="nav-link">Data</a></strong>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-9">
+                <div class="jumbotron" id="jumbo1">
+                    <h1>Comparison: Latitude vs X</h1>
+                    <hr class="my-2">
+                    <p>Click any plot to get an in-depth analysis.</p>
+                    
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="jumbotron" id="temp">
+                                <h4>vs. Max Temperature</h4>
+                                <a href="temp.html"><img src="https://github.com/tanxx519/UMN_Homework/blob/master/06%20-api-challenge/Images/temp_lat.png?raw=true"></a>
+
+                            </div>
+                            <div class="jumbotron" id="humid">                    
+                                <h4>vs. Humidity</h4>
+                                <a class="humid" href="humid.html"><img src="https://github.com/tanxx519/UMN_Homework/blob/master/06%20-api-challenge/Images/humidity_lat.png?raw=true"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="jumbotron" id="cloud">
+                                <h4>vs. Cloudiness</h4>
+                                <a href="cloud.html"><img src="https://github.com/tanxx519/UMN_Homework/blob/master/06%20-api-challenge/Images/cloud_lat.png?raw=true"></a>
+
+                            </div>
+                            <div class="jumbotron" id="wind">                    
+                                <h4>vs. Wind Speed</h4>
+                                <a href="wind.html"><img src="https://github.com/tanxx519/UMN_Homework/blob/master/06%20-api-challenge/Images/wind_lat.png?raw=true"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- </div> -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
